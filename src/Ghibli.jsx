@@ -7,24 +7,13 @@ function FetchChosenMovie(props) {
     fetch("https://ghibliapi.herokuapp.com/films")
       .then((movieList) => movieList.json())
       .then((movieList) => {
-        console.log(movieList);
         setMovieData(movieList);
-        movieList.filter((item) => {
+        const filteredMovie = movieList.filter((item) => {
           if(item.title === props.chosenMovie) {
-            console.log(props.chosenMovie);
+            return props.chosenMovie;
           }
         })
-        // function shortList(movieName, movieList){
-        //   for(let i=0; i<movieList.length; i++) {
-        //     movieList[i].title === 
-        //   }
-        // }
-        //Select a random movie from the array
-        // const randItemNo = Math.floor(Math.random()*movieList.length);
-        // console.log(randItemNo);
-        // console.log(movieList[randItemNo]);
-        // const movieData = movieList[randItemNo];
-        // setMovieData(movieData);
+        setMovieData(filteredMovie[0]);
       });
   }, [props.chosenMovie]);
 
@@ -32,6 +21,10 @@ function FetchChosenMovie(props) {
   return (
     <div>
       <h1>{movieData.title}</h1>
+      <h2>{movieData.original_title}</h2>
+      <h2>{movieData.rt_score}</h2>
+      <h3>{movieData.release_date}</h3>
+      <h3>{movieData.running_time}</h3>
     </div>
   );
 }
@@ -48,8 +41,6 @@ function RandomMovie() {
         setMovieData(movieList)
         //Select a random movie from the array
         const randItemNo = Math.floor(Math.random()*movieList.length);
-        console.log(randItemNo);
-        console.log(movieList[randItemNo]);
         const movieData = movieList[randItemNo];
         setMovieData(movieData);
       });
@@ -59,6 +50,10 @@ function RandomMovie() {
   return (
     <div>
       <h1>{movieData.title}</h1>
+      <h2>{movieData.original_title}</h2>
+      <h2>{movieData.rt_score}</h2>
+      <h3>{movieData.release_date}</h3>
+      <h3>{movieData.running_time}</h3>
     </div>
   );
 }
