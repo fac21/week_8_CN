@@ -20,12 +20,13 @@ function FetchChosenMovie(props) {
   if (!movieData) return <div>Loading...</div>;
   return (
     <div>
-      <h1>{movieData.title}</h1>
-      <h2>{movieData.original_title}</h2>
-      <h2>{movieData.rt_score}</h2>
-      <h3>{movieData.release_date}</h3>
-      <h3>{movieData.running_time}</h3>
-    </div>
+      <h2>{movieData.title}</h2>
+      <h3>{movieData.original_title}</h3>
+      <h4>Rotten Tomato Rating:</h4> 
+      <h3 className='rt'>{movieData.rt_score}</h3>
+      <h4>Released: {movieData.release_date}</h4>
+      <h4>Running Time: {movieData.running_time}</h4>
+  </div>
   );
 }
 
@@ -49,11 +50,12 @@ function RandomMovie() {
   if (!movieData) return <div>Loading...</div>;
   return (
     <div>
-      <h1>{movieData.title}</h1>
-      <h2>{movieData.original_title}</h2>
-      <h2>{movieData.rt_score}</h2>
-      <h3>{movieData.release_date}</h3>
-      <h3>{movieData.running_time}</h3>
+      <h2>{movieData.title}</h2>
+      <h3>{movieData.original_title}</h3>
+      <h4>Rotten Tomato Rating:</h4> 
+      <h3 className='rt'>{movieData.rt_score}</h3>
+      <h4>Released: {movieData.release_date}</h4>
+      <h4>Running Time: {movieData.running_time}</h4>
     </div>
   );
 }
