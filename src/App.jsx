@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Game on Ghibli!</h1>
+        <h1><a href='/'>Game on Ghibli!</a></h1>
         <form onSubmit={
               (event) => {
                 event.preventDefault();
@@ -26,18 +26,22 @@ function App() {
               <option value="My Neighbor Totoro">My Neighbor Totoro</option>
               <option value="Only Yesterday">Only Yesterday</option>
               <option value="Grave of the Fireflies">Grave of the Fireflies</option>
+              <option value="Grave of the Fireflies">Porco Rosso</option>
+              <option value="Grave of the Fireflies">Pom Poko</option>
+              <option value="Grave of the Fireflies">Whisper of the Heart</option>
+              <option value="Grave of the Fireflies">The Wind Rises</option>
             </select>
           </label>
           <button type='submit'>Submit</button>
         </form>
         {chosenMovie? 
-          <>
+          <div class='flex-movies'>
           <FetchChosenMovie chosenMovie={chosenMovie}/>
           <RandomMovie /> 
-          </>
+          </div>
           : null}
         <br></br>
-        Your score: <img src={popcorn} height='100'/>
+        <p>Popcorn Points</p> <img src={popcorn} height='65'/>
       </header>
     </div>
   )

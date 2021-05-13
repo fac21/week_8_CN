@@ -6,17 +6,61 @@
   background-color: #282c34;
   min-height: 100vh;
   color: white;
+  padding: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: white;
 }
 
 h1 {
   margin: 0, auto;
   padding: 0;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 3rem;
+}
+
+h1:hover {
+  cursor: pointer;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 2rem;
 }
 
 button {
-  font-size: calc(10px + 2vmin);
+  font-size: calc(5px + 1vmin);
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 .rt {
   color: rgb(255, 247, 21);
 }
+
+.flex-movies {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 5rem;
+}
+
+.flex-movies > * {
+  width: 50vw;
+}
+
