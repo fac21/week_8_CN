@@ -30,9 +30,11 @@ ProsV Cons:
 - IMDB Movies site
 Pros V Cons:
 
--Studio Ghibli API
+- Studio Ghibli API
 Pros V Cons:
 
+
+(Ultimately) Selected Ghibli:
 Comparing films, options to compare:
 - Rotten Tomato score (highest wins)
 - Running time (longest wins)
