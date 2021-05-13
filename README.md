@@ -2,9 +2,13 @@
 
 Neville & Chun (Ephie, Shaya, & Oli)
 
+---
+
 ### Task
 
 The goal is to build an interactive game-like thing that uses data from an API.
+
+---
 
 ### Setup
 
@@ -52,7 +56,8 @@ Stretch criteria
 
 ---
 
-### Issue
+### Issues
+
 - Nested folders
 - Nested Fetch in API
 - Submitting a Form
