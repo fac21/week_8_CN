@@ -1,42 +1,41 @@
 import React, { useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
+import {RandomMovie, FetchChosenMovie} from './Ghibli.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [chosenMovie, setChosenMovie] = useState("")
 
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
+      <form onSubmit={
+            (event) => {
+              event.preventDefault();
+              setChosenMovie(event.target.movies.value);
+            }
+          }>
+        <label htmlFor="cars">Choose a movie:
+          <select 
+          name="movies" 
+          id="movies" 
           >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
+            <option value="Kiki's Delivery Service">Kiki's Delivery Service</option>
+            <option value="My Neighbor Totoro">My Neighbor Totoro</option>
+            <option value="Only Yesterday">Only Yesterday</option>
+            <option value="Grave of the Fireflies">Grave of the Fireflies</option>
+          </select>
+        </label>
+        <button type='submit'>Submit</button>
+      </form>
+      {chosenMovie? 
+        <>
+        <FetchChosenMovie chosenMovie={chosenMovie}/>
+        <RandomMovie /> 
+        </>
+        : null}
+        
       </header>
     </div>
   )
