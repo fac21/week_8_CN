@@ -63,7 +63,7 @@ function FetchMovie(props) {
         </div>
         <br></br>
       </div>
-      <img src={popcorn} height='65'/> 
+      <img src={popcorn} alt="Image of popcorn carton" height='65'/> 
       <p>Consecutive Popcorn Points</p>
       {score === 0? <p className='rt'>Game Over!! You scored {lastScore} point(s)</p> : <p className='rt'>{score}</p>}
     </div>

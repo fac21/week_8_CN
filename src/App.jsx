@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1><a href='/'>Game on Ghibli!</a><img src={pixel} height='140'/></h1>
+        <h1><a href='/'>Game on Ghibli!</a><img src={pixel} alt="Image of Tototoro, a cartoon mascoon Ghibili" height='140'/></h1>
         <form onSubmit={
               (event) => {
                 event.preventDefault();
