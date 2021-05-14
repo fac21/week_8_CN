@@ -1,23 +1,23 @@
 import React, { useState } from 'react'
-import popcorn from './popcorn2.png'
+import popcorn from './popcorn.png'
+import pixel from './pixel.png'
 import './App.css'
 import {RandomMovie, FetchChosenMovie} from './Ghibli.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
   const [chosenMovie, setChosenMovie] = useState("")
 
   return (
     <div className="App">
       <header className="App-header">
-        <h1><a href='/'>Game on Ghibli!</a></h1>
+        <h1><a href='/'>Game on Ghibli!</a><img src={pixel} height='140'/></h1>
         <form onSubmit={
               (event) => {
                 event.preventDefault();
                 setChosenMovie(event.target.movies.value);
               }
             }>
-          <label htmlFor="cars">Choose a movie:
+          <label htmlFor="cars"><p>Choose a movie:</p>
             <select 
             name="movies" 
             id="movies" 
@@ -26,22 +26,22 @@ function App() {
               <option value="My Neighbor Totoro">My Neighbor Totoro</option>
               <option value="Only Yesterday">Only Yesterday</option>
               <option value="Grave of the Fireflies">Grave of the Fireflies</option>
-              <option value="Grave of the Fireflies">Porco Rosso</option>
-              <option value="Grave of the Fireflies">Pom Poko</option>
-              <option value="Grave of the Fireflies">Whisper of the Heart</option>
-              <option value="Grave of the Fireflies">The Wind Rises</option>
+              <option value="Porco Rosso">Porco Rosso</option>
+              <option value="Pom Poko">Pom Poko</option>
+              <option value="Whisper of the Heart">Whisper of the Heart</option>
+              <option value="The Wind Rises">The Wind Rises</option>
             </select>
           </label>
-          <button type='submit'>Submit</button>
+          <button type='submit'>Go!</button>
         </form>
-        {chosenMovie? 
+        {chosenMovie ? 
           <div class='flex-movies'>
-          <FetchChosenMovie chosenMovie={chosenMovie}/>
-          <RandomMovie /> 
+            <FetchChosenMovie chosenMovie={chosenMovie}/>
+            <RandomMovie /> 
           </div>
           : null}
         <br></br>
-        <p>Popcorn Points</p> <img src={popcorn} height='65'/>
+        <p>Popcorn Points</p><img src={popcorn} height='65'/>
       </header>
     </div>
   )
